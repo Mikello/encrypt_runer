@@ -1,0 +1,92 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ сборка script_loader.cpp",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-rdynamic",
+                "-g",
+                "script_loader.cpp",
+                "-o",
+                "${fileDirname}/script_loader",
+                "-I",
+                "/usr/include/python3.8/",
+                "-L",
+                "/usr/lib/x86_64-linux-gnu/",
+                "-lpython3.8",
+                "-ldl",
+                "-lstdc++fs"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ сборка test_load_encode_dinamic.cpp",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-rdynamic",
+                "-g",
+                "test_load_encode_dinamic.cpp",
+                "-o",
+                "${fileDirname}/test_load_encode_dinamic",
+                "${fileDirname}/../src/encrypt/**.cpp",
+                "-I",
+                "/usr/include/python3.8/",
+                "-L",
+                "/usr/lib/x86_64-linux-gnu/",
+                "-lpython3.8",
+                "-ldl"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ сборка encrypt.so",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-rdynamic",
+                "-fPIC",
+                "-shared",
+                "-o",
+                "${fileDirname}/../src/encrypt/libencrypt.so",
+                "${fileDirname}/../src/encrypt/encrypt.cpp"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        }
+    ],
+    "version": "2.0.0"
+}

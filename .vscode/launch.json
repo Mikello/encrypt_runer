@@ -1,0 +1,92 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Текущий файл",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "script_loader.cpp",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/script_loader",
+            "args": ["tests/res/test_main.ypy"],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Включить автоматическое форматирование для gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Задать для варианта приложения дизассемблирования значение Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ сборка script_loader.cpp",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "test_load_encode_dinamic.cpp",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/test_load_encode_dinamic",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Включить автоматическое форматирование для gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Задать для варианта приложения дизассемблирования значение Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ сборка test_load_encode_dinamic.cpp",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "C/C++: g++ сборка encrypt.so",
+            "type": "cppdbg",
+            "request": "launch",
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Включить автоматическое форматирование для gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Задать для варианта приложения дизассемблирования значение Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ сборка encrypt.so",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
